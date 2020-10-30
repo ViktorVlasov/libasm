@@ -6,10 +6,15 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 15:48:42 by efumiko           #+#    #+#             */
-/*   Updated: 2020/10/30 17:13:47 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/10/30 20:03:19 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <stddef.h>
+# include <string.h>
+# include <fcntl.h>
+# include <stdio.h>
+# include <unistd.h>
 #include "libasm.h"
 
 int main(void)
@@ -165,16 +170,15 @@ int main(void)
     char *str;
 
 	printf("\n----STRDUP_TEST----\n");
-	printf("s1: %s\n", (str = ft_strdup("HELLO WORLD\n")));
+	printf("normal string: %s\n", (str = ft_strdup("HELLO WORLD\n")));
 	free(str);
-	printf("s2: %s\n", (str = ft_strdup("\n")));
+	printf("normal string1: %s\n", (str = ft_strdup("\n")));
 	free(str);
-	printf("s3: %s\n", (str = ft_strdup("")));
+	printf("empty: %s\n", (str = ft_strdup("")));
 	free(str);
-	printf("s4: %s\n", (str = ft_strdup("12345678901234567890\n")));
+	printf("normal string2: %s\n", (str = ft_strdup("12345678901234567890\n")));
 	free(str);
-	printf("s5: %s\n", (str = ft_strdup("HELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLD\n")));
+	printf("very long string: %s\n", (str = ft_strdup("HELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLDHELLO WORLD\n")));
 	free(str);
-
 	return (0);
 }

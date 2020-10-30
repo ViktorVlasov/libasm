@@ -7,15 +7,15 @@ extern _ft_strcpy
 section .text
 
 _ft_strdup:			;	rdi - s
-	push rdi		;	save s
+	push rdi
 	call _ft_strlen
-	inc rax
-	mov rdi, rax
-	call _malloc		;	rax = new_s
-	pop rsi			;	rsi = s
+	inc rax			;   for '\0'
+	mov rdi, rax	
+	call _malloc
 	test rax, rax
-	jz _ret
+	jz _exit
 	mov rdi, rax
+	pop rsi			;	rsi = s
 	call _ft_strcpy
-_ret:
+_exit:
 	ret

@@ -3,7 +3,7 @@ global _ft_write
 extern ___error
 
 section .text
-_ft_write:	 ; rdi - fd, rsi - &buf, rdx - count		
+_ft_write:	 ; rdi - fd, rsi - *buf, rdx - count		
 	mov rax, 0x2000004
 	syscall
     jc _set_err

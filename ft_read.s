@@ -3,7 +3,7 @@ global _ft_read
 extern ___error
 
 section .text
-_ft_read:	; rdi - fd, rsi - &buf, rdx - count		
+_ft_read:	; rdi - fd, rsi - *buf, rdx - count		
 	mov rax, 0x2000003
 	syscall
     jc _set_err
