@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: efumiko <efumiko@student.42.fr>            +#+  +:+       +#+         #
+#    By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/21 14:31:46 by efumiko           #+#    #+#              #
-#    Updated: 2020/10/21 14:52:58 by efumiko          ###   ########.fr        #
+#    Updated: 2020/10/30 17:09:16 by efumiko          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libasm.a
-NASM_COMP = nasm -felf64
+NASM_COMP = nasm -fmacho64
 
 SRC =	ft_strlen.s ft_strcmp.s \
 		ft_read.s ft_write.s \

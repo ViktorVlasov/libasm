@@ -1,9 +1,12 @@
-global ft_strlen
+global _ft_strlen
 
 section		.text
-ft_strlen:	xor rax, rax
-.loop:		cmp [rdi + rax], 0x0
-			je .exit
-			inc rax
-			jmp .loop
-.exit:		ret
+_ft_strlen:	; rdi - char *str
+	xor rax, rax
+_loop:		
+	cmp byte[rdi + rax], 0x0
+	je _exit
+	inc rax
+	jmp _loop
+_exit:	
+	ret
